@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      calculadora postfija
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,31 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">calculadora</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Aplicación de pilas</ion-card-subtitle>
+      <ion-card-title>Expresión infija</ion-card-title>
+    </ion-card-header>
+    <ion-card-content> 
+      <ion-item>
+        <ion-input [(ngModel)]="infija" type="text"></ion-input>
+      </ion-item>
+      <ion-button color="primary" (click)="convertirApostfija()">Convertir a postfija</ion-button>
+      <h2 class="ion-text-center">{{ postfija }}</h2>
+    </ion-card-content>
+  </ion-card> 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Aplicación de pilas</ion-card-subtitle>
+      <ion-card-title>Evaluar expresión postfija</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+      <ion-button color="primary" (click)="evaluarPostfija()">Evaluar</ion-button>
+      <h2 class="ion-text-center">{{ resultado }}</h2>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
